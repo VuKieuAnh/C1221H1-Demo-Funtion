@@ -25,12 +25,13 @@ function checkPrime(number) {
 function checkPrime1(number) {
 //number: bien cuc bo
 //     let check = true;
+    if(number <2) return false;
     for (let i = 2; i <= Math.sqrt(number); i++) {
         if (number%i==0){
             return false;
         }
     }
-    return  true;
+    return true;
 }
 // trung ten bien cuc bo va bien toan cuc: khong nen dung
 //bien toan cuc

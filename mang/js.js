@@ -46,9 +46,12 @@ function addNewElement1(array, value, index) {
 function deleteElement1(array, index) {
     // tạo ra 1 mảng mới
     let newArray=[];
+
     for (let i = 0; i < index; i++) {
         newArray[i] = array[i]
     }
+
+
     for (let i = index; i < array.length -1; i++) {
         newArray[i] = array[i+1];
     }
