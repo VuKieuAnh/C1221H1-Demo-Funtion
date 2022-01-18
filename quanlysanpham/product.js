@@ -14,10 +14,10 @@ function showAllProduct() {
         "  </tr>";
     //duyet mang
     for (let i = 0; i < products.length; i++) {
-        let temp = "<tr>\n" +
-            "      <td>"+ products[i]+"</td>\n" +
-            "      <td><button>Edit</button></td>\n" +
-            "      <td><button>Xoa</button></td>\n" +
+        let temp = "<tr>" +
+            "      <td>"+ products[i]+"</td>" +
+            "      <td><button onclick='editProduct("+i+")'>Edit</button></td>" +
+            "      <td><button onclick='deleteProduct("+i+")'>Xoa</button></td>" +
             "    </tr>";
         content+=temp;
     }
@@ -39,4 +39,24 @@ function createNewProduct() {
     let name = document.getElementById("newProduct").value;
     products.push(name);
     showAllProduct();
+    document.getElementById("newProduct").value = "";
 }
+//1. tên hàm: deleteProductById
+//2. tham số: index
+//3. Thực thi:
+// xoa phan tu
+// hien thi danh sach lai
+//4. Trả về: void
+function deleteProduct(index) {
+    products.splice(index, 1);
+    showAllProduct();
+}
+
+function editProduct(index) {
+    let newName = prompt("Moi ban nhap ten sp", products[index]);
+    products[index] = newName;
+    showAllProduct();
+}
+
+
+
